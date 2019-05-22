@@ -21,7 +21,9 @@ $ git clone https://github.com/libardolara/watson-studio
 ```
 
 ## 2. Crear los servicios en IBM Cloud
+* Crea el servicio [Watson Discovery](https://cloud.ibm.com/catalog/services/discovery)
 
+## 3. Cargar la información
 * Haz click e el boton _Launch Tool_ o _Lanzar Herramienta_
 * Haz click en el boton **Upload your own Data** para crear una nueva colección. 
 * Llama a la colección `workshop-collection`y escoge el idioma **Spanish**
@@ -37,6 +39,14 @@ $ git clone https://github.com/libardolara/watson-studio
 * Finalmente haz click en el boton **Apply changes to collection** para que los cambios se apliquen sobre los documentos ya cargados y los que vamos a cargar.
 * Arrastra los demas documentos ha la ventana emergente que te permite agregar nuevos documentos a la colección.
 * Espera a que los 60 documentes sean agregados y procesando.
-* 
+
+## 4. Realizar Consultas
+* Haz click en el link _Build your own query_
+* Haz click en la sección **Search for Documents**
+* En la pestaña _Use natural language_ has una consulta como `apartamanetos en manhattan con vista` y haz click en el boton **Run query**
+* Observa los resultados en la pestaña **Summary** y en la pestaña **JSON**
+* Haz click en la sección **Filter which documents you query**
+* Selecciona _enriched_comments.sentiment.document.label_ 
+
 
 
