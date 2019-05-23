@@ -89,5 +89,14 @@ Para mayor información revisa la documentación de las [Operaciones de Agregaci
 En esta sección vamos a realizar el entrenamiento del entendimiento que tiene Watson Discovery sobre los documentos que conforman un corpus de conocimiento. Para mayor información revisa la documentacion del [Entrenamiento de Relevancia](https://cloud.ibm.com/docs/services/discovery?topic=discovery-improving-result-relevance-with-the-tooling)
 
 * En la sección de construir consultas, haz click en el link **Train Watson to improve results**
-* 
+* Haz click en el enlace **+ Add recent queries from Watson Discovery to **
+* Selecciona las consultas de lenguaje natural que hemos usado `apartamentos en manhattan con vista` y `problemas con precio y mosquitos`. Haz click en el boton **Add to training list** y cierra la ventana emergente.
+* Observa que las consultas hacen parte ahora de una lista de entrenamiento, en este punto podemos agregar mas consultas para entrenar o calificar los resultados de las consultas en la lista.
+* Haz click en el boton **Rate results** para la consulta `apartamentos en manhattan con vista`
+* Califica las respuestas con **Relevant** o **Not Relevant**. Minimo uno de cada una.
+* Cuando termines con esta consulta, haz click en **Back to queries**
+* Haz click en el boton **Rate results** para la consulta `problemas con precio y mosquitos`
+* Califica las respuestas con **Relevant** o **Not Relevant**. Minimo uno de cada una.
+* Cuando termines con esta consulta, haz click en **Back to queries**
 
+![](img/relevance-training.png)
