@@ -26,6 +26,9 @@ $ git clone https://github.com/libardolara/w-discovery
 * Haz click e el boton _Launch Tool_ o _Lanzar Herramienta_
 * Haz click en el boton **Upload your own Data** para crear una nueva colección. 
 * Llama a la colección `workshop-collection`y escoge el idioma **Spanish**
+
+![](img/create-collection.png)
+
 * Carga un documento de ejemplo, utilice el archivo **airbnb2.json**. Para esto es suficiente con arrastrarlo hacia la herramienta web del Watson Discovery.
 * Haz click en el boton **Configure Data** para modificar la configuración con que el Watson Discovery lee, almacena y enriquece los documentos. Para mayor información revisa la documentación de [Smart Document Understanding](https://cloud.ibm.com/docs/services/discovery?topic=discovery-sdu)
 * Nota que la pestaña **Identify Fields** es usada para convertir y normalizar los documentos de tal forma que se puedan identificar los campos que puedan venir en la data no estructurada. Para nuestro caso los documentos son `JSON`y son considerados data estructurada por lo cual no trabajaremos con esta pestaña.
@@ -35,22 +38,37 @@ $ git clone https://github.com/libardolara/w-discovery
 * Selecciona el campo `comments`en la lista **Add a Field to Enrich**
 * Haz click en el link _+ Add Enrichment_
 * Selecciona los enriquecimientos **Entity Extraction** y **Sentiment Analysis**
+
+![](img/enrich-fields.png)
+
 * Finalmente haz click en el boton **Apply changes to collection** para que los cambios se apliquen sobre los documentos ya cargados y los que vamos a cargar.
 * Arrastra los demas documentos ha la ventana emergente que te permite agregar nuevos documentos a la colección.
 * Espera a que los 60 documentes sean agregados y procesando.
+
+![](img/all-documents.png)
 
 ## 4. Realizar Consultas
 * Haz click en el link _Build your own query_
 * Haz click en la sección **Search for Documents**
 * En la pestaña _Use natural language_ has una consulta como `apartamentos en manhattan con vista` y haz click en el boton **Run query**
+
+![](img/nlq-manhattan.png)
+
 * Observa los resultados en la pestaña **Summary** y en la pestaña **JSON**
 * Haz click en la sección **Filter which documents you query**
-* Selecciona _enriched_comments.sentiment.document.label_ como campo, _is_ como operador y _Positive_ como valor. Haz click en el boton **Run query**
+* Selecciona _enriched_comments.sentiment.document.label_ como campo, _is_ como operador y _Positive_ como valor.
 * Agrega una regla en la sección **Filter which documents you query**
 * Selecciona _enriched_comments.sentiment.document.score_ como campo, _greater_ como operador y escribe _0.9_ como valor. Haz click en el boton **Run query**
+
+![](img/filter-sentiment-manhattan.png)
+
 * Observa los resultados en la pestaña **Summary** y en la pestaña **JSON**. Nota las diferencias con los resultados anteriores.
 * Haz click en el icono de borrar para las secciones **Filter which documents you query** y **Search for Documents**
 * Realiza una consulta para buscar `problemas con precio y mosquitos`con un filtro sobre el sentimiento que sea menor a `-0.6`
+
+![](img/nlq-mosquitos.png)
+
+![](img/filter-sentiment-negative.png)
 
 ## 5. Realizar una consulta con Agregación
 Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con mayor cantidad de opiniones positivas
@@ -60,5 +78,5 @@ Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con ma
 * Selecciona _Top Value_ como resultado, _host_id_ como campo y `10` como cantidad.
 * Observa los resultados en la pestaña de la agregación.
 
-
+![](img/query-agg.png)
 
