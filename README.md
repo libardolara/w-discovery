@@ -3,8 +3,7 @@
 El Servicio Watson Discovery permite extraer valor de tu información, al convertir, normalizar y enriquecerla. Utiliza una consulta simple para explorar tus datos y obtener insights ocultos en tu información no estructurada, así como embeber estas capacidades directo en tus aplicaciones.
 
 ## Componentes Incluidos
-* [Watson Discovery](https://cloud.ibm.com/catalog/services/watson-studio): Watson Studio es una herramienta end-to-end que permite desarrollar modelos de machine learning y deep learning combinando los principales proyectos Open Source y herramientas propias de IBM en la nube.
-* [Jupyter Notebook](http://jupyter.org/): Es una aplicación web Open Source que le permite crear y compartir documentos que contienen código en vivo, ecuaciones, visualizaciones y texto narrativo.
+* [Watson Discovery](https://www.ibm.com/watson/services/discovery/): Watson Discovery desbloquea el valor oculto de los datos para encontrar respuestas, monitorear tendencias y patrones de superficiales con el motor de información en la nube más avanzado del mundo.
 
 # Prerequisitos
 * Cuenta activa de [IBM Cloud](https://cloud.ibm.com)
@@ -13,11 +12,11 @@ El Servicio Watson Discovery permite extraer valor de tu información, al conver
 
 ## 1. Clonar el repo
 
-Descarga o clona el repositorio `watson-studio` localmente. 
+Descarga o clona el repositorio `w-discovery` localmente. 
 En una terminal, puedes ejecutar:
 
 ```
-$ git clone https://github.com/libardolara/watson-studio
+$ git clone https://github.com/libardolara/w-discovery
 ```
 
 ## 2. Crear los servicios en IBM Cloud
@@ -43,10 +42,23 @@ $ git clone https://github.com/libardolara/watson-studio
 ## 4. Realizar Consultas
 * Haz click en el link _Build your own query_
 * Haz click en la sección **Search for Documents**
-* En la pestaña _Use natural language_ has una consulta como `apartamanetos en manhattan con vista` y haz click en el boton **Run query**
+* En la pestaña _Use natural language_ has una consulta como `apartamentos en manhattan con vista` y haz click en el boton **Run query**
 * Observa los resultados en la pestaña **Summary** y en la pestaña **JSON**
 * Haz click en la sección **Filter which documents you query**
-* Selecciona _enriched_comments.sentiment.document.label_ 
+* Selecciona _enriched_comments.sentiment.document.label_ como campo, _is_ como operador y _Positive_ como valor. Haz click en el boton **Run query**
+* Agrega una regla en la sección **Filter which documents you query**
+* Selecciona _enriched_comments.sentiment.document.score_ como campo, _greater_ como operador y escribe _0.9_ como valor. Haz click en el boton **Run query**
+* Observa los resultados en la pestaña **Summary** y en la pestaña **JSON**. Nota las diferencias con los resultados anteriores.
+* Haz click en el icono de borrar para las secciones **Filter which documents you query** y **Search for Documents**
+* Realiza una consulta para buscar `problemas con precio y mosquitos`con un filtro sobre el sentimiento que sea menor a `-0.6`
+
+## 5. Realizar una consulta con Agregación
+Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con mayor cantidad de opiniones positivas
+* Borra todas las consultas que tengas en la herramienta.
+* Agrega un filtro sobre el sentimiento para que sea `positive`.
+* Haz click en la sección **Include analysis of your results**
+* Selecciona _Top Value_ como resultado, _host_id_ como campo y `10` como cantidad.
+* Observa los resultados en la pestaña de la agregación.
 
 
 
