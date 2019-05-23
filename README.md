@@ -74,6 +74,7 @@ Para mayor información revisa la documentación sobre los [Conceptos de Consult
 
 ## 5. Realizar una consulta con Agregación
 Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con mayor cantidad de opiniones positivas
+
 * Borra todas las consultas que tengas en la herramienta.
 * Agrega un filtro sobre el sentimiento para que sea `positive`.
 * Haz click en la sección **Include analysis of your results**
@@ -83,3 +84,10 @@ Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con ma
 ![](img/query-agg.png)
 
 Para mayor información revisa la documentación de las [Operaciones de Agregación](https://cloud.ibm.com/docs/services/discovery?topic=discovery-query-aggregations)
+
+## 6. Entrenamiento de Relevancia
+En esta sección vamos a realizar el entrenamiento del entendimiento que tiene Watson Discovery sobre los documentos que conforman un corpus de conocimiento. Para mayor información revisa la documentacion del [Entrenamiento de Relevancia](https://cloud.ibm.com/docs/services/discovery?topic=discovery-improving-result-relevance-with-the-tooling)
+
+* En la sección de construir consultas, haz click en el link **Train Watson to improve results**
+* 
+
