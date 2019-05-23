@@ -70,6 +70,8 @@ $ git clone https://github.com/libardolara/w-discovery
 
 ![](img/filter-sentiment-negative.png)
 
+Para mayor información revisa la documentación sobre los [Conceptos de Consultas](https://cloud.ibm.com/docs/services/discovery?topic=discovery-query-concepts)
+
 ## 5. Realizar una consulta con Agregación
 Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con mayor cantidad de opiniones positivas
 * Borra todas las consultas que tengas en la herramienta.
@@ -80,3 +82,4 @@ Ahora vamos a crear una consulta en la cual se agreguen los arrendatarios con ma
 
 ![](img/query-agg.png)
 
+Para mayor información revisa la documentación de las [Operaciones de Agregación](https://cloud.ibm.com/docs/services/discovery?topic=discovery-query-aggregations)
