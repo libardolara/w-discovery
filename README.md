@@ -101,3 +101,25 @@ En esta sección vamos a realizar el entrenamiento del entendimiento que tiene W
 * Cuando termines con esta consulta, haz click en **Back to queries**
 
 ![](img/relevance-training.png)
+
+# Paso a Paso - Trabajando con PDFs
+
+## 1. Cargar la información
+
+* En la pestaña de colecciones crea una nueva colección en español, llamado `PDF Medicos`
+* Abre la carpeta `/enfermedades` del repositorio que descargaste en tu computador.
+* Carga **5** documentos de ejemplo. Para esto es suficiente con arrastrarlo hacia la herramienta web del Watson Discovery.
+* Haz click en el boton **Configure Data** para modificar la configuración con que el Watson Discovery lee, almacena y enriquece los documentos.
+* En la pestaña **Identify Fields** puedes anotar los 5 documentos de ejemplo para entrenar un modelo de Machine Learning capaz de ordenar la data no estructurada de los PDFs
+* Haz click en el icono de `Single page view` para acceder a la vista de pagina individual.
+* En la columna de la derecha haz click sobre el campo `title` y selecciona en el documento el titulo. Nota como tu selección cambia de color.
+* En la columna de la derecha haz click sobre el campo `subtitle` y selecciona en el documento los subtitulo. Nota como tu selección cambia de color.
+* Cuando estes listo haz click en el boton **Submit Page**
+
+![](img/pdf-annotate.png)
+
+* Repite el proceso para las paginas siguientes del mismo documento.
+* En la pestaña **Enrich Fields** elimina el enriquecimiento de `sentiment` sobre el campo **text**
+* Finalmente haz click en el boton **Apply changes to collection**
+* Arrastra los siguientes **15** documentos para ser cargados a la colección
+* Espera a que todos los documentes sean agregados y procesando.
