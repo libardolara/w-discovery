@@ -123,3 +123,24 @@ En esta sección vamos a realizar el entrenamiento del entendimiento que tiene W
 * Finalmente haz click en el boton **Apply changes to collection**
 * Arrastra los siguientes **15** documentos para ser cargados a la colección
 * Espera a que todos los documentes sean agregados y procesando.
+
+![](img/all-pdfs.png)
+
+## 2. Realizar Consultas
+
+* Haga click en el enlace _Build your own query_
+* Haz click en enlace **More options** y en la opción **Passages** selecciona **No**.
+* Haz una consulta de lenguaje natural buscando `¿cuál es la causa de la amigdalitis?`.
+* Observa los resultados, su score y los highligts. Compara los score versus los resultados esperados.
+* Borre la consulta anterior.
+* Realice una consulta de agregación para buscarlos el top 10 de entidades identificadas como _HealthCondition_
+
+```
+nested(enriched_text.entities).filter(enriched_text.entities.type::"HealthCondition").term(enriched_text.entities.text,count:10)
+```
+
+![](img/pdf-agregacion.png)
+
+* Borre la agregacion anterior y realice una nueva consulta de agregación para buscar el top 10 de conceptos con una relevacia de mayor a `0.9`
+* Borre la consulta anterior.
+* Busque los documentos que tienen el conepto **Bacteria**
