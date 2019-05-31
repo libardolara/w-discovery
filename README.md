@@ -154,7 +154,7 @@ nested(enriched_text.entities).filter(enriched_text.entities.type::"HealthCondit
 * Haz click en el botón **Connect a data source**
 * Observa las diferentes fuentes de información; Salesforce, SharePoint, Box, Web Crawl(_Beta_) y IBM Cloud Object Storage. Para mayor información revisa al documentacion de [Conexiones a fuentes de datos](https://cloud.ibm.com/docs/services/discovery?topic=discovery-sources)
 * Haz click en el botón **Web Crawl (_Beta_)**
-* En el campo _Enter URL_ agrega la dirección **https://medlineplus.gov/spanish/ency/encyclopedia_A.htm** y haz click en el botón **Add**
+* En el campo _Enter URL_ agrega la dirección `https://medlineplus.gov/spanish/ency/encyclopedia_A.htm` y haz click en el botón **Add**
 
 ![](img/crawl-url.png)
 
