@@ -23,15 +23,15 @@ $ git clone https://github.com/libardolara/w-discovery
 * Crea el servicio [Watson Discovery](https://cloud.ibm.com/catalog/services/discovery)
 
 ## 3. Cargar la información
-* Haz click e el boton _Launch Tool_ o _Lanzar Herramienta_
-* Haz click en el boton **Upload your own Data** para crear una nueva colección. 
+* Haz click e el botón _Launch Tool_ o _Lanzar Herramienta_
+* Haz click en el botón **Upload your own Data** para crear una nueva colección. 
 * Llama a la colección `workshop-collection`y escoge el idioma **Spanish**
 
 ![](img/create-collection.png)
 
 * Abre la carpeta `/reviews` del repositorio que descargaste en tu computador.
 * Carga un documento de ejemplo, utilice el archivo **airbnb2.json**. Para esto es suficiente con arrastrarlo hacia la herramienta web del Watson Discovery.
-* Haz click en el boton **Configure Data** para modificar la configuración con que el Watson Discovery lee, almacena y enriquece los documentos. Para mayor información revisa la documentación de [Smart Document Understanding](https://cloud.ibm.com/docs/services/discovery?topic=discovery-sdu)
+* Haz click en el botón **Configure Data** para modificar la configuración con que el Watson Discovery lee, almacena y enriquece los documentos. Para mayor información revisa la documentación de [Smart Document Understanding](https://cloud.ibm.com/docs/services/discovery?topic=discovery-sdu)
 * Nota que la pestaña **Identify Fields** es usada para convertir y normalizar los documentos de tal forma que se puedan identificar los campos que puedan venir en la data no estructurada. Para nuestro caso los documentos son `JSON`y son considerados data estructurada por lo cual no trabajaremos con esta pestaña.
 * En la pestaña **Manage Fields** seleccionamos los campos que queremos que sean indexados en el Watson Discovery. Campos que no tengan información util los puedes de-seleccionar. Para nuestro ejercisio vamos a dejar todos los campos.
 * En la pestaña **Enrich Fields** vamos a seleccionar que campos y que enriquiecimientos utilizar. Para mayor información revisa la documentación de como [Agregar Enriquecimientos](https://cloud.ibm.com/docs/services/discovery?topic=discovery-configservice#adding-enrichments)
@@ -42,7 +42,7 @@ $ git clone https://github.com/libardolara/w-discovery
 
 ![](img/enrich-fields.png)
 
-* Finalmente haz click en el boton **Apply changes to collection** para que los cambios se apliquen sobre los documentos ya cargados y los que vamos a cargar.
+* Finalmente haz click en el botón **Apply changes to collection** para que los cambios se apliquen sobre los documentos ya cargados y los que vamos a cargar.
 * Arrastra los demas documentos ha la ventana emergente que te permite agregar nuevos documentos a la colección.
 * Espera a que los 60 documentes sean agregados y procesando.
 
@@ -51,7 +51,7 @@ $ git clone https://github.com/libardolara/w-discovery
 ## 4. Realizar Consultas
 * Haz click en el link _Build your own query_
 * Haz click en la sección **Search for Documents**
-* En la pestaña _Use natural language_ has una consulta como `apartamentos en manhattan con vista` y haz click en el boton **Run query**
+* En la pestaña _Use natural language_ has una consulta como `apartamentos en manhattan con vista` y haz click en el botón **Run query**
 
 ![](img/nlq-manhattan.png)
 
@@ -59,7 +59,7 @@ $ git clone https://github.com/libardolara/w-discovery
 * Haz click en la sección **Filter which documents you query**
 * Selecciona _enriched_comments.sentiment.document.label_ como campo, _is_ como operador y _Positive_ como valor.
 * Agrega una regla en la sección **Filter which documents you query**
-* Selecciona _enriched_comments.sentiment.document.score_ como campo, _greater_ como operador y escribe _0.9_ como valor. Haz click en el boton **Run query**
+* Selecciona _enriched_comments.sentiment.document.score_ como campo, _greater_ como operador y escribe _0.9_ como valor. Haz click en el botón **Run query**
 
 ![](img/filter-sentiment-manhattan.png)
 
@@ -91,12 +91,12 @@ En esta sección vamos a realizar el entrenamiento del entendimiento que tiene W
 
 * En la sección de construir consultas, haz click en el link **Train Watson to improve results**
 * Haz click en el enlace **+ Add recent queries from Watson Discovery to **
-* Selecciona las consultas de lenguaje natural que hemos usado `apartamentos en manhattan con vista` y `problemas con precio y mosquitos`. Haz click en el boton **Add to training list** y cierra la ventana emergente.
+* Selecciona las consultas de lenguaje natural que hemos usado `apartamentos en manhattan con vista` y `problemas con precio y mosquitos`. Haz click en el botón **Add to training list** y cierra la ventana emergente.
 * Observa que las consultas hacen parte ahora de una lista de entrenamiento, en este punto podemos agregar mas consultas para entrenar o calificar los resultados de las consultas en la lista.
-* Haz click en el boton **Rate results** para la consulta `apartamentos en manhattan con vista`
+* Haz click en el botón **Rate results** para la consulta `apartamentos en manhattan con vista`
 * Califica las respuestas con **Relevant** o **Not Relevant**. Minimo uno de cada una.
 * Cuando termines con esta consulta, haz click en **Back to queries**
-* Haz click en el boton **Rate results** para la consulta `problemas con precio y mosquitos`
+* Haz click en el botón **Rate results** para la consulta `problemas con precio y mosquitos`
 * Califica las respuestas con **Relevant** o **Not Relevant**. Minimo uno de cada una.
 * Cuando termines con esta consulta, haz click en **Back to queries**
 
@@ -109,20 +109,20 @@ En esta sección vamos a realizar el entrenamiento del entendimiento que tiene W
 * En la pestaña de colecciones crea una nueva colección en español, llamado `PDF Medicos`
 * Abre la carpeta `/enfermedades` del repositorio que descargaste en tu computador.
 * Carga **5** documentos de ejemplo. Para esto es suficiente con arrastrarlo hacia la herramienta web del Watson Discovery.
-* Haz click en el boton **Configure Data** para modificar la configuración con que el Watson Discovery lee, almacena y enriquece los documentos.
+* Haz click en el botón **Configure Data** para modificar la configuración con que el Watson Discovery lee, almacena y enriquece los documentos.
 * En la pestaña **Identify Fields** puedes anotar los 5 documentos de ejemplo para entrenar un modelo de Machine Learning capaz de ordenar la data no estructurada de los PDFs
-* Haz click en el icono de `Single page view` para acceder a la vista de pagina individual.
-* En la columna de la derecha haz click sobre el campo `title` y selecciona en el documento el titulo. Nota como tu selección cambia de color.
-* En la columna de la derecha haz click sobre el campo `subtitle` y selecciona en el documento los subtitulo. Nota como tu selección cambia de color.
-* Cuando estes listo haz click en el boton **Submit Page**
+* Haz click en el icono de `Single page view` para acceder a la vista de página individual.
+* En la columna de la derecha haz click sobre el campo `title` y selecciona en el documento el título. Nota como tu selección cambia de color.
+* En la columna de la derecha haz click sobre el campo `subtitle` y selecciona en el documento los subtítulo. Nota como tu selección cambia de color.
+* Cuando estes listo haz click en el botón **Submit Page**
 
 ![](img/pdf-annotate.png)
 
-* Repite el proceso para las paginas siguientes del mismo documento.
+* Repite el proceso para las páginas siguientes del mismo documento.
 * En la pestaña **Enrich Fields** elimina el enriquecimiento de `sentiment` sobre el campo **text**
-* Finalmente haz click en el boton **Apply changes to collection**
+* Finalmente haz click en el botón **Apply changes to collection**
 * Arrastra los siguientes **15** documentos para ser cargados a la colección
-* Espera a que todos los documentes sean agregados y procesando.
+* Espera a que todos los documentos sean agregados y procesando.
 
 ![](img/all-pdfs.png)
 
@@ -133,7 +133,7 @@ En esta sección vamos a realizar el entrenamiento del entendimiento que tiene W
 * Haz una consulta de lenguaje natural buscando `¿cuál es la causa de la amigdalitis?`.
 * Observa los resultados, su score y los highligts. Compara los score versus los resultados esperados.
 * Borre la consulta anterior.
-* Realice una consulta de agregación para buscarlos el top 10 de entidades identificadas como _HealthCondition_
+* Realice una consulta de agregación para buscar el top 10 de entidades identificadas como _HealthCondition_
 
 ```
 nested(enriched_text.entities).filter(enriched_text.entities.type::"HealthCondition").term(enriched_text.entities.text,count:10)
@@ -143,4 +143,45 @@ nested(enriched_text.entities).filter(enriched_text.entities.type::"HealthCondit
 
 * Borre la agregacion anterior y realice una nueva consulta de agregación para buscar el top 10 de conceptos con una relevacia de mayor a `0.9`
 * Borre la consulta anterior.
-* Busque los documentos que tienen el conepto **Bacteria**
+* Busque los documentos que tienen el concepto **Bacteria**
+
+
+# Paso a Paso - Trabajando con Conectores
+
+## 1. Cargar la información
+
+* El plan gratuito **Lite** permite tener 2 colecciones, puedes actualizar el plan a **Advanced** o en la pestaña de colecciones, borra alguna de las colecciones usadas en los ejecicios anteriores.
+* Haz click en el botón **Connect a data source**
+* Observa las diferentes fuentes de información; Salesforce, SharePoint, Box, Web Crawl(_Beta_) y IBM Cloud Object Storage. Para mayor información revisa al documentacion de [Conexiones a fuentes de datos](https://cloud.ibm.com/docs/services/discovery?topic=discovery-sources)
+* Haz click en el botón **Web Crawl (_Beta_)**
+* En el campo _Enter URL_ agrega la dirección **https://medlineplus.gov/spanish/ency/encyclopedia_A.htm** y haz click en el botón **Add**
+
+![](img/crawl-url.png)
+
+* Haz click en el icono de configuración con forma de rueda, al lado de la URL agregada.
+* Configura el numero maximo de saltos que hara el web crawler en **1**. Haz click en el botón **Submit**
+
+![](img/crawl-config.png)
+
+* En el lenguaje del contenido selecciona español.
+* Haz click en el botón **Save & Sync**
+* Espera a que la sincronización termine.
+
+![](img/all-webcrawl.png)
+
+## 2. Realizar Consultas
+
+* Haga click en el enlace _Build your own query_
+* Haz click en enlace **More options** y en la opción **Passages** selecciona **No**.
+* Haz una consulta de lenguaje natural buscando `¿cuál es la causa de la amigdalitis?`.
+* Observa los resultados, su score y los highligts. Compara los score versus los resultados esperados.
+* Borre la consulta anterior.
+* Realice una consulta de agregación para buscar el top 10 de entidades identificadas como _HealthCondition_
+
+```
+nested(enriched_text.entities).filter(enriched_text.entities.type::"HealthCondition").term(enriched_text.entities.text,count:10)
+```
+
+* Borre la agregacion anterior y realice una nueva consulta de agregación para buscar el top 10 de conceptos con una relevacia de mayor a `0.9`
+* Borre la consulta anterior.
+* Busque los documentos que tienen el concepto **Bacteria**
